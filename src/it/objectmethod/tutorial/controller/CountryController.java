@@ -14,7 +14,7 @@ public class CountryController {
 
 	@Autowired
 	private ICountryDao countryDao;
-	
+
 	@GetMapping("/country/{code}")
 	public String countryByCode(@PathVariable("code") String code, ModelMap model) {
 		Country country = countryDao.getCountryByCode(code);

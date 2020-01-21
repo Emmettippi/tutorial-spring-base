@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import it.objectmethod.tutorial.model.Country;
 
-public class CountryMapper implements RowMapper<Country>{
+public class CountryMapper implements RowMapper<Country> {
 
 	@Override
 	public Country mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -16,5 +16,4 @@ public class CountryMapper implements RowMapper<Country>{
 		country.setNome(rs.getString("Name"));
 		return country;
 	}
-
 }
