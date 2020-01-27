@@ -7,25 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>Inserisci una nuova nazione</h3>
-	<form action="/TutorialSpringBase/country/insert" method="POST">
-		Codice: <input type="text" name="countryCode" /> <br>
-		Nome: <input type="text" name="countryName" /> <br>
-		<input type="submit" value="INSERISCI" /> <br>
+	<h3>Nazione</h3>
+	<form action="/TutorialSpringBase/country" method="POST">
+		Codice: <input type="text" value="${country.code}" name="code" /> <br>
+		Nome: <input type="text" value ="${country.name}" name="name" /> <br>
+		<input type="hidden" value="${country.id}" name="id" /> <br>
+		<input type="submit" value="SALVA" /> <br>
 	</form>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 </body>
 </html>

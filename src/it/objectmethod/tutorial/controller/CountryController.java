@@ -18,17 +18,18 @@ public class CountryController {
 	@Autowired
 	private ICountryDao countryDao;
 
-	@PostMapping("/country/insert")
-	public String insertCountry(@RequestParam("countryCode") String countryCode,
-		@RequestParam("countryName") String countryName) {
+	@PostMapping("/country")
+	public String insertCountry(@RequestParam("id") Long id, @RequestParam("code") String code,
+		@RequestParam("name") String name) {
 		Country country = new Country();
-		country.setCode(countryCode);
-		country.setName(countryName);
+		country.setId(id);
+		country.setCode(code);
+		country.setName(name);
 		boolean correct = countryDao.insertCountry(country);
 		if (!correct) {
 			// handle error
 		}
-		return "redirect:/country/" + countryCode;
+		return "redirect:/country/" + code;
 	}
 
 	@GetMapping("/country/search")
