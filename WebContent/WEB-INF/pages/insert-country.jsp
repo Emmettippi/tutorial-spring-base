@@ -8,14 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>BENVENUTO!!</h1>
-	<p>${benvenuto}</p>
-	<a href="index">Home</a> <br> <br>
-	<a href="search-country">Cerca Nazione</a> <br>
-	<a href="insert-country">Inserisci Nazione</a> <br>
-	<a href="pagina/1/show">Pagina 1</a>
-	<a href="pagina/2/show">Pagina 2</a>
-	<a href="pagina/3/show">Pagina 3</a>
-	<a href="pagina/4/show">Pagina 4</a>
+	<h1>Inserisci una nazione</h1> <br>
+	<form action="/TutorialSpringBase/country/insert" method="POST">
+	<input type="text" name="countryCode"/> <br>
+	<input type="text" name="countryName"/> <br>
+	<input type="submit" value="INSERISCI"/>
+	</form>
 </body>
 </html>
