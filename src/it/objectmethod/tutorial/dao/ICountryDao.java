@@ -8,5 +8,5 @@ public interface ICountryDao {
 
 	public Integer getMaxCountryId();
 
-	public Country insertCountry(Country country);
+	public boolean insertCountry(Country country);
 }

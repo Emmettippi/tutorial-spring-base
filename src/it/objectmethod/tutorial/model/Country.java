@@ -2,22 +2,22 @@ package it.objectmethod.tutorial.model;
 
 public class Country {
 
-	private String codice;
-	private String nome;
+	private String code;
+	private String name;
 
-	public String getCodice() {
-		return codice;
+	public String getCode() {
+		return code;
 	}
 
-	public void setCodice(String codice) {
-		this.codice = codice;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 }

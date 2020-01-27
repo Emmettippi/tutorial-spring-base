@@ -21,10 +21,13 @@ public class CountryController {
 	public String insertCountry(@RequestParam("countryCode") String countryCode,
 		@RequestParam("countryName") String countryName) {
 		Country country = new Country();
-		country.setCodice(countryCode);
-		country.setNome(countryName);
-		Country result = countryDao.insertCountry(country);
-		return "redirect:/country/" + result.getCodice();
+		country.setCode(countryCode);
+		country.setName(countryName);
+		boolean correct = countryDao.insertCountry(country);
+		if (!correct) {
+			// handle error
+		}
+		return "redirect:/country/" + countryCode;
 	}
 
 	@GetMapping("/country/search")
@@ -37,5 +40,10 @@ public class CountryController {
 		Country country = countryDao.getCountryByCode(code);
 		model.addAttribute("country", country);
 		return "country";
+	}
+
+	@GetMapping()
+	public String countryList() {
+		return null;
 	}
 }

@@ -11,11 +11,14 @@ public class CountryDaoImpl extends NamedParameterJdbcDaoSupport implements ICou
 
 	@Override
 	public Country getCountryByCode(String code) {
-		String sql = "SELECT * FROM country WHERE code = :code";
-		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("code", code); // refer to :code
-		BeanPropertyRowMapper<Country> rm = new BeanPropertyRowMapper<Country>(Country.class);
-		Country country = getNamedParameterJdbcTemplate().queryForObject(sql, params, rm);
+		Country country = null;
+		if (code != null && !code.isEmpty()) {
+			String sql = "SELECT * FROM country WHERE code = :code";
+			MapSqlParameterSource params = new MapSqlParameterSource();
+			params.addValue("code", code); // refer to :code
+			BeanPropertyRowMapper<Country> rm = new BeanPropertyRowMapper<Country>(Country.class);
+			country = getNamedParameterJdbcTemplate().queryForObject(sql, params, rm);
+		}
 		return country;
 	}
 
@@ -29,15 +32,16 @@ public class CountryDaoImpl extends NamedParameterJdbcDaoSupport implements ICou
 	}
 
 	@Override
-	public Country insertCountry(Country country) {
+	public boolean insertCountry(Country country) {
 		String sql = "INSERT INTO country (idcountry, code, name) "
 			+ "VALUES (:idcountry, :code, :name)";
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("idcountry", getMaxCountryId() + 1); // refer to :idcountry
-		params.addValue("code", country.getCodice()); // refer to :code
-		params.addValue("name", country.getNome()); // refer to :name
-		BeanPropertyRowMapper<Country> rm = new BeanPropertyRowMapper<Country>(Country.class);
-		int rows = getNamedParameterJdbcTemplate().getJdbcTemplate().update(sql);
-		return country;
+		params.addValue("code", country.getCode()); // refer to :code
+		params.addValue("name", country.getName()); // refer to :name
+		// BeanPropertyRowMapper<Country> rm = new BeanPropertyRowMapper<Country>(Country.class);
+		int rows = getNamedParameterJdbcTemplate().update(sql, params);
+
+		return rows == 1;
 	}
 }

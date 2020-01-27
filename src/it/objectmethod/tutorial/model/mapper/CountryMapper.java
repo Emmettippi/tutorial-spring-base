@@ -12,8 +12,8 @@ public class CountryMapper implements RowMapper<Country> {
 	@Override
 	public Country mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Country country = new Country();
-		country.setCodice(rs.getString("Code"));
-		country.setNome(rs.getString("Name"));
+		country.setCode(rs.getString("Code"));
+		country.setName(rs.getString("Name"));
 		return country;
 	}
 }
