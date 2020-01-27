@@ -59,5 +59,12 @@ public class HomeController {
 		model.addAttribute("passato", "Sono passato da landing!");
 		return "landing";
 	}
-
+	@RequestMapping("/search-country")
+	public String searchCountry() {
+		return "search-country";
+	}
+	@RequestMapping("/insert-country")
+	public String insertCountry() {
+		return "insert-country";
+	}
 }
