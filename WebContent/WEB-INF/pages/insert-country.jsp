@@ -11,7 +11,7 @@
 	<form action="/TutorialSpringBase/country" method="POST">
 		Codice: <input type="text" value="${country.code}" name="code" /> <br>
 		Nome: <input type="text" value ="${country.name}" name="name" /> <br>
-		<input type="hidden" value="${country.id}" name="id" /> <br>
+		<input type="hidden" value="${country.idcountry}" name="idcountry" /> <br>
 		<input type="submit" value="SALVA" /> <br>
 	</form>
 	<p><a href="/TutorialSpringBase/welcome">Ritorna alla home</a></p>

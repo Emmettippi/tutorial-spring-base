@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,10 +21,10 @@ public class CountryController {
 	private ICountryDao countryDao;
 
 	@PostMapping("/country")
-	public String insertCountry(@RequestParam("id") Long id, @RequestParam("code") String code,
+	public String insertCountry(@RequestParam("idcountry") Long idcountry, @RequestParam("code") String code,
 		@RequestParam("name") String name) {
 		Country country = new Country();
-		country.setId(id);
+		country.setIdcountry(idcountry);
 		country.setCode(code);
 		country.setName(name);
 		boolean correct = countryDao.insertCountry(country);
@@ -46,16 +45,20 @@ public class CountryController {
 		model.addAttribute("country", country);
 		return "country";
 	}
-
+	
 	@GetMapping("/country-list")
 	public String countryList(ModelMap model) {
 		List<Country> countryList = countryDao.findAll();
 		model.addAttribute("countries", countryList);
 		return "country-list";
 	}
-
-	@DeleteMapping()
-	public String deleteCountry() {
-		return null;
+	
+	@PostMapping("/country/{idcountry}")
+	public String deleteCountry(@PathVariable("idcountry") Long idcountry) {
+		boolean correct = countryDao.deleteCountry(idcountry);
+		if(!correct) {
+			// handle error
+		}
+		return "redirect:/country-list";
 	}
 }

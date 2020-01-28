@@ -13,6 +13,6 @@
 			<li><a href="/TutorialSpringBase/country/${country.code}">${country.name}"</a></li>
 		</c:forEach>
 	</ul>
-	<p><a href="../welcome">Ritorna alla home</a></p>
+	<p><a href="/TutorialSpringBase/welcome">Ritorna alla home</a></p>
 </body>
 </html>
