@@ -10,5 +10,6 @@
 <body>
 	<p>${country.code}</p>
 	<p>${country.name}</p>
+	<p><a href="../main">home</a></p>
 </body>
 </html>

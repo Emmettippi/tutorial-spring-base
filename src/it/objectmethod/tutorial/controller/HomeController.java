@@ -60,9 +60,9 @@ public class HomeController {
 		return "landing";
 	}
 
-	@RequestMapping("/search-country")
-	public String searchCountry() {
-		return "search-country";
+	@RequestMapping("/country-list")
+	public String getCountryAll() {
+		return "country-list";
 	}
 
 	@RequestMapping("/insert-country")
