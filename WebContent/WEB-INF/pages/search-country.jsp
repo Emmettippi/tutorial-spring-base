@@ -12,5 +12,6 @@
 		<input type="text" name="countryCode" />
 		<input type="submit" value="CERCA" />
 	</form>
+	<a href="index">Home</a>
 </body>
 </html>
