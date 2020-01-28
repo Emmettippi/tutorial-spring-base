@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.objectmethod.tutorial.dao.ICountryDao;
 import it.objectmethod.tutorial.model.Country;
@@ -14,6 +16,11 @@ public class CountryController {
 
 	@Autowired
 	private ICountryDao countryDao;
+	@GetMapping
+	public String searchCountry(@RequestParam("countryCode")String countryCode) {
+		return "redirect:/country/" + countryCode;
+		
+	}
 
 	@GetMapping("/country/{code}")
 	public String countryByCode(@PathVariable("code") String code, ModelMap model) {
