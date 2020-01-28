@@ -10,6 +10,12 @@
 <body>
 	<p>${country.code}</p>
 	<p>${country.name}</p>
-	<p><a href="../welcome">Ritorna alla home</a></p>
+	<p>
+		<a href="../welcome">Ritorna alla home</a>
+	</p>
+	<form action="/TutorialSpringBase/country/${country.idcountry}"
+		method="POST">
+		<input type="submit" value="CANCELLA">
+	</form>
 </body>
 </html>
