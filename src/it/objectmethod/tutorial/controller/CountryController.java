@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.objectmethod.tutorial.dao.ICountryDao;
@@ -25,7 +26,7 @@ public class CountryController {
 	public String insertCountry(@RequestParam("id") Long id, @RequestParam("code") String code,
 		@RequestParam("name") String name) {
 		Country country = new Country();
-		country.setId(id);
+		country.setIdcountry(id);
 		country.setCode(code);
 		country.setName(name);
 		boolean correct = countryDao.insertCountry(country);
@@ -53,9 +54,19 @@ public class CountryController {
 		model.addAttribute("countries", countryList);
 		return "country-list";
 	}
-
-	@DeleteMapping()
-	public String deleteCountry() {
+	
+	@RequestMapping("/country/{id}")
+	public String deleteCountry(@RequestParam long id) {
+		
 		return null;
+	}
+	
+	@PostMapping("/country/{countryId}")
+	public String deleteCountry(@PathVariable("countryId") Long countryId) {
+		boolean correct = countryDao.deleteCountry(countryId);
+		if(!correct) {
+			System.out.println("Nope!");
+		}
+		return "redirect:/country/all";
 	}
 }

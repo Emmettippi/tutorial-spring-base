@@ -13,6 +13,6 @@
 	<a href="index">Home</a> <br>
 	<a href="insert-country">Inserisci Nazione</a> <br>
 	<a href="search-country">Cerca Nazione</a> <br>
-	<a href="country-list">Lista nazioni</a> <br>
+	<a href="country/all">Lista nazioni</a> <br>
 </body>
 </html>

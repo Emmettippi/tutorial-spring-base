@@ -11,5 +11,8 @@
 	<p>${country.code}</p>
 	<p>${country.name}</p>
 	<a href="welcome">Home</a>
+	<form action ="/TutorialSpringBase/country/${country.idcountry}" method="POST">
+		<input type="submit" value="Cancella">
+	</form>
 </body>
 </html>

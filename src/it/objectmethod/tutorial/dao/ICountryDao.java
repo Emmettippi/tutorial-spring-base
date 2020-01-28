@@ -12,6 +12,8 @@ public interface ICountryDao {
 	public Integer getMaxCountryId();
 
 	public boolean insertCountry(Country country);
+	
+	public boolean deleteCountry(Long idcountry);
 
 	public List<Country> findAll();
 
