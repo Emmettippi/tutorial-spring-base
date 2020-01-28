@@ -13,6 +13,8 @@ public class CountryMapper implements RowMapper<Country> {
 	public Country mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Country country = new Country();
 		country.setCode(rs.getString("Code"));
+		// DB: column_name
+		// Java: columnName
 		country.setName(rs.getString("Name"));
 		return country;
 	}

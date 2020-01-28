@@ -51,12 +51,8 @@ public class CountryDaoImpl extends NamedParameterJdbcDaoSupport implements ICou
 	@Override
 	public List<Country> findAll() {
 		String sql = "SELECT * FROM country";
-		// MapSqlParameterSource params = new MapSqlParameterSource();
-		// BeanPropertyRowMapper<List<Country>> rm = new BeanPropertyRowMapper<List<Country>>(ArrayList<Country>.class);
-		List<Country> countries = getNamedParameterJdbcTemplate().query(sql, new CountryMapper());
-		for (Country c : countries) {
-			System.out.println(c.getCode() + "|" + c.getName());
-		}
+		List<Country> countries = getNamedParameterJdbcTemplate()
+			.query(sql, new CountryMapper());
 		return countries;
 	}
 }
