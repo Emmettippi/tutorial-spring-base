@@ -1,11 +1,14 @@
 package it.objectmethod.tutorial.dao.impl;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 
 import it.objectmethod.tutorial.dao.ICountryDao;
 import it.objectmethod.tutorial.model.Country;
+import it.objectmethod.tutorial.model.mapper.CountryMapper;
 
 public class CountryDaoImpl extends NamedParameterJdbcDaoSupport implements ICountryDao {
 
@@ -43,5 +46,17 @@ public class CountryDaoImpl extends NamedParameterJdbcDaoSupport implements ICou
 		int rows = getNamedParameterJdbcTemplate().update(sql, params);
 
 		return rows == 1;
+	}
+
+	@Override
+	public List<Country> findAll() {
+		String sql = "SELECT * FROM country";
+		// MapSqlParameterSource params = new MapSqlParameterSource();
+		// BeanPropertyRowMapper<List<Country>> rm = new BeanPropertyRowMapper<List<Country>>(ArrayList<Country>.class);
+		List<Country> countries = getNamedParameterJdbcTemplate().query(sql, new CountryMapper());
+		for (Country c : countries) {
+			System.out.println(c);
+		}
+		return countries;
 	}
 }

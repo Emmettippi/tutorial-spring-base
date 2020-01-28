@@ -1,5 +1,7 @@
 package it.objectmethod.tutorial.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -37,16 +39,18 @@ public class CountryController {
 		return "redirect:/country/" + countryCode;
 	}
 
+	@GetMapping("/country/all")
+	public String countryList(ModelMap model) {
+		List<Country> countries = countryDao.findAll();
+		model.addAttribute("countries", countries);
+		return "country-list";
+	}
+
 	@GetMapping("/country/{code}")
 	public String countryByCode(@PathVariable("code") String code, ModelMap model) {
 		Country country = countryDao.getCountryByCode(code);
 		model.addAttribute("country", country);
 		return "country";
-	}
-
-	@GetMapping()
-	public String countryList() {
-		return null;
 	}
 
 	@DeleteMapping()

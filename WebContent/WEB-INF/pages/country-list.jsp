@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<ul>
-		<c:forEach items="${countries}" var="country">
-			<li><a href="country/${country.code}">${country.name}"</a></li>
-		</c:forEach>
-	</ul>
+<table>
+	<c:forEach items="${countries}" var="c">
+		<tr>
+			<td><a href="country/${c.code}">${c.name}"</a></td>
+		</tr>
+	</c:forEach>
+</table>
 </body>
 </html>
