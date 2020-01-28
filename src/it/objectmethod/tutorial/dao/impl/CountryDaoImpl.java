@@ -55,4 +55,15 @@ public class CountryDaoImpl extends NamedParameterJdbcDaoSupport implements ICou
 		List<Country> country = getNamedParameterJdbcTemplate().query(sql, new CountryMapper());
 		return country;
 	}
+
+	@Override
+	public boolean deleteCountryById(Long idcountry) {
+		String sql = "DELETE FROM country WHERE idcountry= :idcountry";
+			MapSqlParameterSource params = new MapSqlParameterSource();
+			params.addValue("idcountry", idcountry); // refer to :idcountry
+			int rows = getNamedParameterJdbcTemplate().update(sql, params);
+			return rows == 1;
+	}
+	
+	
 }

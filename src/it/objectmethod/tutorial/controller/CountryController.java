@@ -23,10 +23,10 @@ public class CountryController {
 	private ICountryDao countryDao;
 
 	@PostMapping("/country")
-	public String insertCountry(@RequestParam("id") Long id, @RequestParam("code") String code,
+	public String insertCountry(@RequestParam("idcountry") Long idcountry, @RequestParam("code") String code,
 		@RequestParam("name") String name) {
 		Country country = new Country();
-		country.setId(id);
+		country.setIdcountry(idcountry);
 		country.setCode(code);
 		country.setName(name);
 		boolean correct = countryDao.insertCountry(country);
@@ -53,10 +53,13 @@ public class CountryController {
 		model.addAttribute("country", country);
 		return "country";
 	}
-
 	
-	@DeleteMapping()
-	public String deleteCountry() {
-		return null;
-	}
+	@PostMapping("/country/{idcountry}")
+	public String deleteCountryById(@PathVariable("idcountry") Long idcountry) {
+			boolean correct = countryDao.deleteCountryById(idcountry);
+			if (!correct) {
+				// handle error
+			}
+			return "redirect:/country";
+		}
 }

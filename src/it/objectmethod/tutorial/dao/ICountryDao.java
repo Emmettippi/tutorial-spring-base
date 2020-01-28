@@ -13,4 +13,8 @@ public interface ICountryDao {
 	public boolean insertCountry(Country country);
 	
 	public List<Country> getAllCountry();
+
+	public boolean deleteCountryById(Long idcountry);
+
+	
 }

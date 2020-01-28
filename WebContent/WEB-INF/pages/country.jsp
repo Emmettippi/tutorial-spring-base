@@ -8,7 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<a href="../country">Lista Nazioni</a>
 	<p>${country.code}</p>
 	<p>${country.name}</p>
+
+	<form action="/TutorialSpringBase/country/${country.idcountry}" method="POST">
+		<input type="submit" value="CANCELLA">
+	</form>
+
 </body>
 </html>

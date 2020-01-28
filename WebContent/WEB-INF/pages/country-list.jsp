@@ -9,12 +9,11 @@
 </head>
 <body>
 <h1>Lista nazioni</h1>
+<a href="welcome">Menu</a>
 	<ul>
 		<c:forEach items="${countries}" var="country">
 			<li><a href="country/${country.code}">${country.name}"</a></li>
 		</c:forEach>
 	</ul>
-	
-	<a href="index">Home</a>
 </body>
 </html>
