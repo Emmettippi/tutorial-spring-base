@@ -8,13 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<p>${country.code}</p>
-	<p>${country.name}</p>
-	<a href="../index">Home</a>
-	<br>
-	<form action="/TutorialSpringBase/country/${country.idcountry}" method="POST">
-	<input type= "submit" value = "CANCELLA">
-	</form>
-	</body>
+	<form action="/TutorialSpringBase/country/search" method="POST">
+		<p>${country.Id}</p>
+		<a href="../index">Home</a>
+		</form>
+		
+</body>
 </html>

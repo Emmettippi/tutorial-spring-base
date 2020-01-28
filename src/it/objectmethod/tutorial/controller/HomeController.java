@@ -73,4 +73,8 @@ public class HomeController {
 	public String findAll() {
 		return "country-list";
 	}
+	@RequestMapping("/delete-id")
+	public String deleteById() {
+		return "delete-id";
+	}
 }

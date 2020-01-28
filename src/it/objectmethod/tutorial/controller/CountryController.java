@@ -24,7 +24,7 @@ public class CountryController {
 	public String insertCountry(@RequestParam("id") Long id, @RequestParam("code") String code,
 		@RequestParam("name") String name) {
 		Country country = new Country();
-		country.setId(id);
+		country.setIdcountry(id);
 		country.setCode(code);
 		country.setName(name);
 		boolean correct = countryDao.insertCountry(country);
@@ -54,8 +54,12 @@ public class CountryController {
 		return "country";
 	}
 
-	@DeleteMapping()
-	public String deleteCountry() {
-		return null;
+	@PostMapping("/country/{idcountry}")
+	public String deleteCountry(@PathVariable("idcountry") Long idcountry) {
+		boolean correct = countryDao.deleteCountry(idcountry);
+		if (!correct) {
+		}
+			return "redirect:/index";
+		
 	}
 }
