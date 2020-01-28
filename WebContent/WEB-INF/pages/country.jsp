@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<a href="index">Home</a> <br>
 	<p>${country.code}</p>
 	<p>${country.name}</p>
 </body>

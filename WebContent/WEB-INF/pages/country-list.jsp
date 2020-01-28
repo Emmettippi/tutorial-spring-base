@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<a href="index">Home</a> <br>
 	<ul>
 		<c:forEach items="${countries}" var="country">
 			<li><a href="country/${country.code}">${country.name}"</a></li>

@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h3>Nazione</h3>
+	<a href="index">Home</a> <br>
 	<form action="/TutorialSpringBase/country" method="POST">
 		Codice: <input type="text" value="${country.code}" name="code" /> <br>
 		Nome: <input type="text" value ="${country.name}" name="name" /> <br>

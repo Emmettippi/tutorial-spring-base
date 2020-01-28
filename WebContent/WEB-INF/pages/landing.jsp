@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<a href="index">Home</a> <br>
 	<p>${user}</p>
 	<p>${passato}</p>
 </body>

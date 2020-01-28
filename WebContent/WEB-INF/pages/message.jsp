@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<a href="index">Home</a> <br>
 	<h3>${message}</h3>
 	<a href="${link}">${linkMessage}"</a>
 </body>

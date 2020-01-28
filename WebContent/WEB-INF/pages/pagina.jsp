@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h1>PAGINA NUMERO ${num}</h1>
+	<a href="index">Home</a> <br>
 	<form action="/TutorialSpringBase/login" method="POST">
 		<input type="text" name="username" />
 		<input type="submit" value="LOGIN"/>
