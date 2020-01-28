@@ -11,6 +11,7 @@
 	<form action="/TutorialSpringBase/country/search" method="GET">
 		<input type="text" name="countryCode" />
 		<input type="submit" value="CERCA" />
+		<a href="welcome">Home</a>
 	</form>
 </body>
 </html>

@@ -1,5 +1,8 @@
 package it.objectmethod.tutorial.dao;
 
+
+import java.util.List;
+
 import it.objectmethod.tutorial.model.Country;
 
 public interface ICountryDao {
@@ -9,4 +12,7 @@ public interface ICountryDao {
 	public Integer getMaxCountryId();
 
 	public boolean insertCountry(Country country);
+
+	public List<Country> findAll();
+
 }

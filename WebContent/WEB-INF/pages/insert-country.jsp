@@ -13,6 +13,7 @@
 		Nome: <input type="text" value ="${country.name}" name="name" /> <br>
 		<input type="hidden" value="${country.id}" name="id" /> <br>
 		<input type="submit" value="SALVA" /> <br>
+		<a href="welcome">Home</a>
 	</form>
 </body>
 </html>
