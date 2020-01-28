@@ -10,5 +10,7 @@
 <body>
 	<p>${user}</p>
 	<p>${passato}</p>
+	<br><br><br>
+	<a href="index">Home</a> <br>
 </body>
 </html>

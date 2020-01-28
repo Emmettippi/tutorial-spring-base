@@ -14,5 +14,7 @@
 		<input type="hidden" value="${country.id}" name="id" /> <br>
 		<input type="submit" value="SALVA" /> <br>
 	</form>
+	<br><br><br>
+	<a href="index">Home</a> <br>
 </body>
 </html>

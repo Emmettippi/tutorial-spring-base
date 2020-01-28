@@ -10,5 +10,7 @@
 <body>
 	<p>${country.code}</p>
 	<p>${country.name}</p>
+	<br><br><br>
+	<a href="index">Home</a> <br>
 </body>
 </html>

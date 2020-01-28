@@ -13,5 +13,7 @@
 		<input type="text" name="username" />
 		<input type="submit" value="LOGIN"/>
 	</form>
+	<br><br><br>
+	<a href="index">Home</a> <br>
 </body>
 </html>

@@ -9,5 +9,7 @@
 <body>
 	<h3>${message}</h3>
 	<a href="${link}">${linkMessage}"</a>
+	<br><br><br>
+	<a href="index">Home</a> <br>
 </body>
 </html>

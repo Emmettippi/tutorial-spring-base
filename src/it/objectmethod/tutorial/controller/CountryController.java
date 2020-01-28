@@ -1,5 +1,7 @@
 package it.objectmethod.tutorial.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -44,11 +46,25 @@ public class CountryController {
 		return "country";
 	}
 
-	@GetMapping()
-	public String countryList() {
-		return null;
+	
+	
+	
+	
+	
+	
+	@GetMapping("/country/all")
+	public String countryList(ModelMap model) {
+		List<Country> countryList = countryDao.getCountryAll();
+		model.addAttribute("countries", countryList);
+		return "country-list";
 	}
 
+	
+	
+	
+	
+	
+	
 	@DeleteMapping()
 	public String deleteCountry() {
 		return null;

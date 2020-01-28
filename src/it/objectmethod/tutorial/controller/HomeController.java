@@ -64,6 +64,11 @@ public class HomeController {
 	public String searchCountry() {
 		return "search-country";
 	}
+	
+	@RequestMapping("/country-list")
+	public String getCountryAll() {
+		return "country-list";
+	}
 
 	@RequestMapping("/insert-country")
 	public String insertCountry() {
