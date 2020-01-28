@@ -11,9 +11,10 @@
 	<h1>BENVENUTO!!</h1>
 	<p>${benvenuto}</p>
 	<a href="index">Home</a>
-	<a href="pagina/1/show">Pagina 1</a>
-	<a href="pagina/2/show">Pagina 2</a>
-	<a href="pagina/3/show">Pagina 3</a>
-	<a href="pagina/4/show">Pagina 4</a>
+	<a href="search-country">Cerca Nazione</a>
+	<a href="insert-country">Inserisci Nazione</a>
+	<a href=""></a>
+	<a href=""></a>
+	<a href=""></a>
 </body>
 </html>

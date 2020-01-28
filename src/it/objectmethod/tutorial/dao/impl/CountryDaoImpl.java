@@ -33,5 +33,11 @@ public class CountryDaoImpl implements ICountryDao {
 
 		return country;
 	}
+	@Override
+	public Integer getMaxCountryId() {
+		String sql = "SELECT MAX (Idcountry) AS maximun FROM country";
+				Integer max = this.jdbcTemplateObject.queryForObject(sql,Integer.class);
+		return max;
+	}
 
 }
