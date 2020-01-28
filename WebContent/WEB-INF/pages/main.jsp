@@ -14,5 +14,6 @@
 	<a href="insert-country">Inserisci Nazione</a> <br>
 	<a href="search-country">Cerca Nazione</a> <br>
 	<a href="country-list">Lista Nazione</a>
+	<a href="country">Cancella Nazione</a>
 </body>
 </html>
