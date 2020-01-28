@@ -26,7 +26,7 @@ public class CountryController {
 	public String insertCountry(@RequestParam("id") Long id, @RequestParam("code") String code,
 		@RequestParam("name") String name) {
 		Country country = new Country();
-		country.setId(id);
+		country.setIdCountry(id);
 		country.setCode(code);
 		country.setName(name);
 		boolean correct = countryDao.insertCountry(country);
@@ -57,7 +57,9 @@ public class CountryController {
 	}
 
 	@DeleteMapping()
-	public String deleteCountry() {
-		return null;
+	public String deleteCountry(@PathVariable("idCountry") Long country) {
+		String rows= countryDao.deleteCountry();
+		
+		return "redirect/country/all";
 	}
 }

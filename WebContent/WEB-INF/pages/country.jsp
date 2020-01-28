@@ -10,5 +10,6 @@
 <body>
 	<p>${country.code}</p>
 	<p>${country.name}</p>
+	<input type="submit" value="delete"> 
 </body>
 </html>

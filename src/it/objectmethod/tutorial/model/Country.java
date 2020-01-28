@@ -2,16 +2,16 @@ package it.objectmethod.tutorial.model;
 
 public class Country {
 
-	private Long id;
+	private Long idCountry;
 	private String code;
 	private String name;
 
-	public Long getId() {
-		return id;
+	public Long getIdCountry() {
+		return idCountry;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdCountry(Long id) {
+		this.idCountry = id;
 	}
 
 	public String getCode() {

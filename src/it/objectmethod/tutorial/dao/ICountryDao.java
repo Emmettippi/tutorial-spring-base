@@ -14,5 +14,7 @@ public interface ICountryDao {
 
 	public List<Country> findAll();
 	
+	public String deleteCountry();
+	
 	
 }
