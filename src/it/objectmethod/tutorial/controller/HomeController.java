@@ -1,3 +1,4 @@
+
 package it.objectmethod.tutorial.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,14 @@ public class HomeController {
 	public String landingCheck(ModelMap model) {
 		model.addAttribute("passato", "Sono passato da landing!");
 		return "landing";
+	}
+	@RequestMapping("/search-country")
+	public String searchCountry() {
+		return "search-country";
+	}
+	@RequestMapping("/insert-country")
+	public String insertCountry() {
+		return "insert-country";
 	}
 
 }
