@@ -14,5 +14,6 @@
 		<input type="hidden" value="${country.id}" name="id" /> <br>
 		<input type="submit" value="SALVA" /> <br>
 	</form>
+	<p><a href="/TutorialSpringBase/welcome">Ritorna alla home</a></p>
 </body>
 </html>

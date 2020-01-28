@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,8 +10,9 @@
 <body>
 	<ul>
 		<c:forEach items="${countries}" var="country">
-			<li><a href="country/${country.code}">${country.name}"</a></li>
+			<li><a href="/TutorialSpringBase/country/${country.code}">${country.name}"</a></li>
 		</c:forEach>
 	</ul>
+	<p><a href="../welcome">Ritorna alla home</a></p>
 </body>
 </html>

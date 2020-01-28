@@ -12,5 +12,6 @@
 		<input type="text" name="countryCode" />
 		<input type="submit" value="CERCA" />
 	</form>
+	<p><a href="/TutorialSpringBase/welcome">Ritorna alla home</a></p>
 </body>
 </html>

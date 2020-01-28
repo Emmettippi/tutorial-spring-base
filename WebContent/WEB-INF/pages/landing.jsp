@@ -10,5 +10,6 @@
 <body>
 	<p>${user}</p>
 	<p>${passato}</p>
+	<p><a href="/TutorialSpringBase/welcome">Ritorna alla home</a></p>
 </body>
 </html>
