@@ -42,6 +42,7 @@ public class CountryController {
 	@GetMapping("/country/all")
 	public String countryList(ModelMap model) {
 		List<Country> countries = countryDao.findAll();
+		// model.put("country", countries.get(0));
 		model.addAttribute("countries", countries);
 		return "country-list";
 	}
