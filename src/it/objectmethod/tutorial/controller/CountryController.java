@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +25,7 @@ public class CountryController {
 	public String insertCountry(@RequestParam("id") Long id, @RequestParam("code") String code,
 		@RequestParam("name") String name) {
 		Country country = new Country();
-		country.setIdCountry(id);
+		country.setIdcountry(id);
 		country.setCode(code);
 		country.setName(name);
 		boolean correct = countryDao.insertCountry(country);
@@ -56,10 +55,10 @@ public class CountryController {
 		
 	}
 
-	@DeleteMapping()
-	public String deleteCountry(@PathVariable("idCountry") Long country) {
-		String rows= countryDao.deleteCountry();
+	@PostMapping("/country/{idcountry}")
+	public String deleteCountry(@PathVariable("idcountry") Long idcountry) {
+		boolean correct = countryDao.deleteCountry(idcountry);
 		
-		return "redirect/country/all";
+		return "redirect:/country-all";
 	}
 }

@@ -10,7 +10,7 @@
 <body>
 	<ul>
 		<c:forEach items="${countries}" var="country">
-			<li><a href="../country/${country.code}">"${country.name}"</a></li>
+			<li><a href="country/${country.code}">"${country.name}"</a></li>
 		</c:forEach>
 	</ul>
 	<a href="index">Home</a>

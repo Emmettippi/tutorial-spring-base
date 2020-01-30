@@ -55,10 +55,11 @@ public class CountryDaoImpl extends NamedParameterJdbcDaoSupport implements ICou
 		return countries;
 	}
 	
-	public String deleteCountry(){
-		String sql="delete country from country where idCountry= :idCountry";
+	public boolean deleteCountry(Long idcountry){
+		String sql="delete from country where idcountry= :idcountry";
 		MapSqlParameterSource params = new MapSqlParameterSource();
-		String rows = deleteCountry();
-		return rows;
+		params.addValue("idcountry", idcountry);
+		int rows= getNamedParameterJdbcTemplate().update(sql, params);
+		return rows==1;
 	}
 }
