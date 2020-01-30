@@ -52,10 +52,10 @@ public class CountryController {
 		return "country";
 	}
 
-	@PostMapping("/country/{countryId}")
-	public String deleteCountry(@PathVariable("countryId") Long countryId) {
-		int rows = countryDao.deleteCountry(countryId);
-		if (rows != 1) {
+	@PostMapping("/country/{idcountry}")
+	public String deleteCountry(@PathVariable("idcountry") Long idcountry) {
+		boolean correct = countryDao.deleteCountry(idcountry);
+		if (!correct) {
 			// handle error
 		}
 		return "redirect:/country/all";

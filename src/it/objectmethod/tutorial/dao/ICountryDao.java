@@ -14,5 +14,5 @@ public interface ICountryDao {
 
 	public List<Country> findAll();
 
-	public int deleteCountry(Long id);
+	public boolean deleteCountry(Long idcountry);
 }
