@@ -19,14 +19,16 @@
 -- Table structure for table `country`
 --
 
-DROP TABLE IF EXISTS `country`;
+DROP TABLE IF EXISTS `citta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `country` (
-  `idcountry` int(11) NOT NULL,
+CREATE TABLE `citta` (
+  `idcitta` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `code` varchar(10) NOT NULL,
-  PRIMARY KEY (`idcountry`),
+  `idcountry` int (11) not null,
+  PRIMARY KEY (`idcitta`),
+  foreign key (`idcountry`),
   UNIQUE KEY `code_UNIQUE` (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

@@ -14,5 +14,8 @@
 	<a href="country/all">Visualizza tutte le nazioni</a> <br>
 	<a href="insert-country">Inserisci Nazione</a> <br>
 	<a href="search-country">Cerca Nazione</a> <br>
+	<a href="citta/all">Visualizza tutte le città</a> <br>
+	
+	
 </body>
 </html>
